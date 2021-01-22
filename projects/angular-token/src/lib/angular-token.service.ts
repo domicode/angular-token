@@ -602,7 +602,7 @@ export class AngularTokenService implements CanActivate {
       authData.tokenType != null &&
       authData.uid != null
     ) {
-      if (this.authData.value != null) {
+      if (this.authData.value != null && this.authData.value.expiry != null) {
         return authData.expiry >= this.authData.value.expiry;
       }
       return true;
